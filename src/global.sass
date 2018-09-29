@@ -1,0 +1,113 @@
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+html, body
+	height: 100%
+	background: white
+body
+	display: grid
+	grid-template-columns: 100%
+	grid-template-areas: "iface"
+	justify-items: center
+	align-items: center
+#app
+	width: 90%
+	max-width: 1500px
+	grid-area: iface
+	height: 90%
+	.container
+		background: lightgray
+		overflow: hidden //for animation
+		height: 100%
+	.inner
+		position: relative
+		width: 100%
+		height: 100%
+		min-height: 100%
+	nav
+		display: grid
+		grid-template-columns: 200px auto
+		grid-template-areas: 'logo menu'
+		width: 92% //nahooi?
+		position: absolute //
+		padding: 50px //
+		z-index: 4 //
+	#logo
+		grid-area: logo
+		font-weight: bold
+		text-transform: uppercase
+	.menu
+		grid-template: menu
+		justify-self: right
+		li
+			display: inline-block
+		a
+			padding: 0 15px
+.main-content
+	display: grid
+	grid-template-columns: 42% auto
+	grid-template-areas: 'left right'
+	height: 100%
+	.left-content
+		grid-area: left
+		padding: 100px 50px 15px 50px
+	.right-content
+		background: tomato
+		display: grid
+		grid-area: right
+		grid-template-columns: auto
+		justify-items: center
+		align-items: center
+	.btn
+		position: absolute
+		left: 42%
+		transform: translateX(-50%)
+	.btn-up
+		top: 20%
+	.btn-down
+		bottom: 20%
+.slideUp
+	animation: slideUpAnim 3s forwards
+	opacity: 0
+.slideDown
+	animation: slideDownAnim 3s forwards
+	opacity: 0
+@keyframes slideDownAnim
+	from
+		opacity: 0
+		transform: translateY(-100px)
+	to
+		opacity: 1
+		transform: translateY(0)
+
+@keyframes slideUpAnim
+	from
+		opacity: 0
+		transform: translateY(100px)
+	to
+		opacity: 1
+		transform: translateY(0)
+//animation between pages
+.fade-enter-active
+	animation: slidePageIn 1s forwards
+	animation-timing-function: cubic-bezier(0.8, -0.49, .36, 1)
+.fade-leave-active
+	animation: slidePageDown 1s forwards
+	animation-timing-function: cubic-bezier(0.8, -0.49, .36, 1)
+
+@keyframes slidePageIn
+	from
+		opacity: 0
+		transform: translateY(-100%)
+	to
+		opacity: 1
+		transform: translateY(0%)
+
+@keyframes slidePageDown
+	from
+		opacity: 1
+		transform: translateY(0%)
+	to
+		opacity: 0
+		transform: translateY(-100%)
