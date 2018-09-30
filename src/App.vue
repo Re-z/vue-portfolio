@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-
       <div class="container">
           <div class="inner">
               <nav>
-                  <router-link to="/" id="logo">Bla bla logo</router-link>
+                  <router-link to="/" id="logo">German Shepherds</router-link>
                   <ul class="menu">
                       <li><router-link to="/">Home</router-link></li>
-                      <li><router-link to="/about">About</router-link></li>
-                      <li><router-link to="/about2">About2</router-link></li>
+                      <li><router-link to="/picture/one">Pictures</router-link></li>
+                      <li><router-link to="/read">Read</router-link></li>
                   </ul>
               </nav>
               <transition name="fade" mode="out-in">

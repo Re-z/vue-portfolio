@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
-import PortfolioOne from './views/PortfolioOne.vue'
-import PortfolioTwo from './views/PortfolioTwo.vue'
+import Read from './views/Read.vue'
+import PictureOne from './views/PictureOne.vue'
+import PictureTwo from './views/PictureTwo.vue'
+import PictureThree from './views/PictureThree.vue'
 
 Vue.use(Router)
 
@@ -15,19 +16,24 @@ export default new Router({
       component: Home
     },
       {
-          path: '/portfolio/one',
-          name: 'PortfolioOne',
-          component: PortfolioOne
+          path: '/picture/one',
+          name: 'PictureOne',
+          component: PictureOne
       },
       {
-          path: '/portfolio/two',
-          name: 'PortfolioTwo',
-          component: PortfolioTwo
+          path: '/picture/two',
+          name: 'PictureTwo',
+          component: PictureTwo
+      },
+      {
+          path: '/picture/three',
+          name: 'PictureThree',
+          component: PictureThree
       },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/read',
+      name: 'read',
+      component: Read
     }
   ],
     mode: 'history'

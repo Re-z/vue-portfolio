@@ -2,9 +2,14 @@
 	margin: 0
 	padding: 0
 	box-sizing: border-box
+a
+	text-decoration: none
+button
+	outline: none
 html, body
 	height: 100%
 	background: white
+	font-family: 'Montserrat', sans-serif
 body
 	display: grid
 	grid-template-columns: 100%
@@ -13,11 +18,12 @@ body
 	align-items: center
 #app
 	width: 90%
-	max-width: 1500px
+	max-width: 1300px
 	grid-area: iface
 	height: 90%
 	.container
-		background: lightgray
+		//background: lightgray
+		box-shadow: 0px 2px 100px lightgray
 		overflow: hidden //for animation
 		height: 100%
 	.inner
@@ -29,12 +35,13 @@ body
 		display: grid
 		grid-template-columns: 200px auto
 		grid-template-areas: 'logo menu'
-		width: 92% //nahooi?
+		width: 100% //nahooi?
 		position: absolute //
 		padding: 50px //
-		z-index: 4 //
+		z-index: 5 //
 	#logo
 		grid-area: logo
+		color: brown
 		font-weight: bold
 		text-transform: uppercase
 	.menu
@@ -42,31 +49,70 @@ body
 		justify-self: right
 		li
 			display: inline-block
+			margin: 0 15px
 		a
-			padding: 0 15px
+			text-transform: uppercase
+			color: brown
+			display: inline-block
+			font-size: 12px
+			font-weight: bold
+
+.btn
+	font-size: 14px
+	padding: 10px 15px
+	text-transform: uppercase
+	background: transparent
+	cursor: pointer
+	font-weight: bold
+	&_home
+		color: brown
+		border: 2px solid brown
+	&_about
+		color: brown
+		border: 2px solid brown
+
+	&_center
+		position: absolute
+		left: 42%
+		transform: translateX(-50%)
+		z-index: 5
+
+	&_down, &_up
+		display: inline-block
+		width: 24px
+		height: 24px
+		padding: 0
+	&_down
+		bottom: 20%
+		background: url("./assets/arrow-down.png") center center no-repeat
+
+	&_up
+		top: 20%
+		background: url("./assets/arrow.png") center center no-repeat
+
 .main-content
 	display: grid
 	grid-template-columns: 42% auto
 	grid-template-areas: 'left right'
+	h1, h2
+		font-size: 30px
+	p
+		margin: 20px 0
 	height: 100%
 	.left-content
 		grid-area: left
 		padding: 100px 50px 15px 50px
+		position: relative
+		z-index: 1
 	.right-content
-		background: tomato
 		display: grid
 		grid-area: right
 		grid-template-columns: auto
 		justify-items: center
 		align-items: center
-	.btn
-		position: absolute
-		left: 42%
-		transform: translateX(-50%)
-	.btn-up
-		top: 20%
-	.btn-down
-		bottom: 20%
+		position: relative
+		z-index: 1
+
 .slideUp
 	animation: slideUpAnim 3s forwards
 	opacity: 0
